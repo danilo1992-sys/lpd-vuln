@@ -1,0 +1,9 @@
+services:
+  lpd:
+    build: .
+    container_name: lpd-vulnerable
+    ports:
+      - "127.0.0.1:1515:1515"
+    environment:
+      LPD_QUEUE: cola
+    restart: unless-stopped
